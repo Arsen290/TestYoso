@@ -24,6 +24,7 @@ public class User {
         this.givenName = givenName;
         this.lastName = lastName;
     }
+
     public User() {
     }
 
@@ -58,7 +59,6 @@ public class User {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
 
 
 }

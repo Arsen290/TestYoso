@@ -15,18 +15,19 @@ import java.util.List;
 @RequestMapping("/api/users")
 public class UserController {
     private final UserService userService;
+
     @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
     }
 
     @PostMapping()
-    public void createUser(@RequestBody UserDTO userDTO){
+    public void createUser(@RequestBody UserDTO userDTO) {
         userService.createUser(userDTO);
     }
 
     @GetMapping
-    public List<UserDTO> getAllUsers(){
+    public List<UserDTO> getAllUsers() {
         return userService.getAllUsers();
     }
 }

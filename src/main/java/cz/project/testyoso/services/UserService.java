@@ -10,9 +10,11 @@ import java.util.List;
 @Service
 public class UserService {
     private final UserRepository userRepository;
+
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
+
     private UserDTO toDTO(User user) {
         UserDTO userDTO = new UserDTO();
         userDTO.setUsername(user.getUsername());
@@ -23,13 +25,13 @@ public class UserService {
     }
 
     public void createUser(UserDTO userDTO) {
-            User user = new User();
-            user.setUsername(userDTO.getUsername());
-            user.setPassword(userDTO.getPassword());
-            user.setGivenName(userDTO.getGivenName());
-            user.setLastName(userDTO.getLastName());
-            userRepository.save(user);
-        }
+        User user = new User();
+        user.setUsername(userDTO.getUsername());
+        user.setPassword(userDTO.getPassword());
+        user.setGivenName(userDTO.getGivenName());
+        user.setLastName(userDTO.getLastName());
+        userRepository.save(user);
+    }
 
     public List<UserDTO> getAllUsers() {
         List<User> users = userRepository.findAll();
