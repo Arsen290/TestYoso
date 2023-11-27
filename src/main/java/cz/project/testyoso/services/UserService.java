@@ -3,9 +3,11 @@ package cz.project.testyoso.services;
 import cz.project.testyoso.DTO.UserDTO;
 import cz.project.testyoso.entities.User;
 import cz.project.testyoso.repositories.UserRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UserService {
     private final UserRepository userRepository;
     public UserService(UserRepository userRepository) {
