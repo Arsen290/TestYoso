@@ -7,7 +7,7 @@ public class UserService {
 
     public UserService() {
     }
-    private UserDTO ToDTO(User user) {
+    private UserDTO toDTO(User user) {
         UserDTO userDTO = new UserDTO();
         userDTO.setUsername(user.getUsername());
         userDTO.setPassword(user.getPassword());
@@ -15,5 +15,6 @@ public class UserService {
         userDTO.setLastName(user.getLastName());
         return userDTO;
     }
+
 
 }
