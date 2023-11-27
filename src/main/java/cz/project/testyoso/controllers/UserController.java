@@ -3,6 +3,8 @@ package cz.project.testyoso.controllers;
 import cz.project.testyoso.DTO.UserDTO;
 import cz.project.testyoso.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,12 +24,24 @@ public class UserController {
     }
 
     @PostMapping()
-    public void createUser(@RequestBody UserDTO userDTO) {
-        userService.createUser(userDTO);
+    public ResponseEntity<String> createUser(@RequestBody UserDTO userDTO) {
+        try {
+            userService.createUser(userDTO);
+            return ResponseEntity.ok("User created successfully");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error creating user: " + e.getMessage());
+        }
     }
 
     @GetMapping
-    public List<UserDTO> getAllUsers() {
-        return userService.getAllUsers();
+    public ResponseEntity<?> getAllUsers() {
+        try {
+            List<UserDTO> users = userService.getAllUsers();
+            return ResponseEntity.ok(users);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error getting users: " + e.getMessage());
+        }
     }
 }
