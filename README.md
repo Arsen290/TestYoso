@@ -33,7 +33,7 @@ This project implements a simple web service for user management using Java and 
    The application will be accessible at http://localhost:8080.
 
 
-##API Endpoints
+## API Endpoints
 POST /api/users: Create a new user.
 GET /api/users: Retrieve all stored users.
 
@@ -48,7 +48,7 @@ Content-Type: application/json
   "lastName": "12"
 }
 
-##Sample Request to Retrieve All Users
+## Sample Request to Retrieve All Users
 Request:
 GET http://localhost:8080/api/users
 
