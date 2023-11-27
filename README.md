@@ -26,7 +26,7 @@ This project implements a simple web service for user management using Java and 
    ```bash
    git clone <repository-url>
 
-3 **Run the Application:**
+3. **Run the Application:**
    ```bash
    mvn spring-boot:run
    ```
