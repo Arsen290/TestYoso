@@ -11,11 +11,11 @@ This project implements a simple web service for user management using Java and 
 
 ## Project Structure
 
-- `src/main/java/com/example/usermanagement/controller`: Contains the controller classes.
-- `src/main/java/com/example/usermanagement/dto`: Contains the Data Transfer Object classes.
-- `src/main/java/com/example/usermanagement/entity`: Contains the Entity class.
-- `src/main/java/com/example/usermanagement/repository`: Contains the Repository interface.
-- `src/main/java/com/example/usermanagement/service`: Contains the Service class.
+- `src/main/java/cz/project/testyoso/controller`: Contains the controller classes.
+- `src/main/java/cz/project/testyoso/dto`: Contains the Data Transfer Object classes.
+- `src/main/java/cz/project/testyoso/entity`: Contains the Entity class.
+- `src/main/java/cz/project/testyoso/repository`: Contains the Repository interface.
+- `src/main/java/cz/project/testyoso/service`: Contains the Service class.
 
 ## Instructions on How to Run
 
@@ -24,7 +24,7 @@ This project implements a simple web service for user management using Java and 
 
 2. **Clone the Repository:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Arsen290/TestYoso/
 
 3. **Run the Application:**
    ```bash
@@ -42,10 +42,10 @@ POST http://localhost:8080/api/users
 Content-Type: application/json
 
 {
-  "username": "zgf",
-  "password": "zggzfzg",
-  "givenName": "zfgz",
-  "lastName": "12"
+  "username": "user_name",
+  "password": "password",
+  "givenName": "given_name",
+  "lastName": "last_name"
 }
 
 ## Sample Request to Retrieve All Users
